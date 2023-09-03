@@ -1,4 +1,5 @@
-# roubank-css
+## skins-trading-control
+Neste repositório terá informações sobre um projeto que tem o objetivo de listar valores de SKINS de COUNTER-STRIKE e seus valores em alguns marketplaces espalhados pelo mundo, nesse projeto será usado o marketplace da china conhecido como buff.163, marketplace CSGO EMPIRE e o valor do item na própria STEAM, essas informações ajudará traders em diversos países mostrando os valores.
 
 Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em operações comuns de instituições financeiras (ex: saque, depósito, extrato, saldo, cadastro), sendo o diferencial, a cobrança de taxas de forma abusiva para cada operação realizada pelo cliente.
 
@@ -6,11 +7,11 @@ O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript e o backen
 
 ## Endereço de Deploy - GitHub Pages
 
-https://utfpr-gp.github.io/roubank-css/
+https://github.com/Soweoff/skins-trading-control
 
 ## Protótipo
 
-https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
+https://www.figma.com/file/KsHHgbQvtgacd2jWmQFu4q/skins-trading-control?type=design&node-id=0%3A1&mode=design&t=iDdHI2eeg1u8q0mR-1
 
 ## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
