@@ -4,7 +4,8 @@
   "description": "Neste repositório terá informações sobre um projeto que tem o objetivo de listar valores de SKINS de COUNTER-STRIKE e seus valores em alguns marketplaces espalhados pelo mundo, nesse projeto será usado o marketplace da china conhecido como buff.163, marketplace CSGO EMPIRE e o valor do item na própria STEAM, essas informações ajudará traders em diversos países mostrando os valores.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend":"json-server --watch db/db.json"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
     "tailwindcss": "^3.3.5"
   },
   "dependencies": {
-    "axios": "^1.6.2"
+    "axios": "^1.6.2",
+    "json-server": "^0.17.4"
   }
 }

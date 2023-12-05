@@ -15,7 +15,7 @@
             <div class="font-black">
                 
             </div>
-            <img  class="w-20 h-25" src="./app/assets/img/STremovebg.png" alt="">
+            <img  class="w-20 h-25" src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701694859/projeto%20SKT/header/b2agoeppzmv45bymoh08.png" alt=""> 
             <ul class="font-semibold flex items-center mr-auto space-x-2">
                 <li>
                     <a href="">Home</a>
@@ -41,9 +41,41 @@
     <!--final do Header-->
 
     <!-- Cards -->
+    <div class="container" id="itens-container">
+        <div class="card">
+            <img src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701280905/projeto%20SKT/capsule/hejfx7po5bta8bbdstkk.png" alt="">
+            <h3>teste</h3>
+        </div>
+    </div>
     
     <!-- /Cards-->
 
+    <script>
+        function carregar() {
+            fetch('../db/db.json')
+                .then(response => response.json())
+                .then(itens_CS => {
+                    const container = document.querySelector("#itens-container")
 
+                    itens_CS.map(capsule => {
+                        const card = document.createElement("div")
+                        card.classList.add("card")
+
+                        const img = document.createElement("img");
+                        img.src = itens_CS.imagem
+                        img.alt = itens_CS.nome
+
+                        const price = document.createElement("h3")
+                        price.textContent = itens_CS.price
+
+                        card.appendChild(img)
+                        card.appendChild(price)
+                        container.appendChild(card)
+                    })
+                })
+        }
+
+        carregar()
+    </script>
 </body>
 </html>

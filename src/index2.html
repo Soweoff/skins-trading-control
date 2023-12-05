@@ -3,126 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <title>Cadastro</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body class="h-screen w-screen  items-center justify-center bg-gray-600">
-    <!--Header, topo da página-->
-    <div class="bg-zinc-700">
-        <div class="container mx-auto px-4 h-16 flex items-center">
-            <div class="font-black">
+<body class="font-sans bg-gray-100">
+    <div class="container mx-auto flex justify-center items-center h-screen">
+        <div class="w-full max-w-xs">
+            <div id="loginForm" class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Login</h2>
+                <form id="login" class="space-y-4">
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-700">Username:</label>
+                        <input type="text" id="username" required
+                            class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
+                        <input type="password" id="password" required
+                            class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+                    <button type="button" onclick="performLogin()"
+                        class="w-full bg-blue-500 text-white p-2 rounded-md">Login</button>
+                </form>
             </div>
-            <img class="w-20 h-25" src="./app/assets/img/STremovebg.png" alt="">
-            <ul class="font-semibold  flex items-center text-white space-x-2">
-                <li>
-                    <a href="">Home</a>
-                </li>
-                <li>
-                    <a href="">Cápsulas</a>
-                </li>
-                <li>
-                    <a href="">Caixas</a>
-                </li>
-            </ul>
 
-            <ul class="ml-auto font-semibold  flex items-center text-white space-x-2">
-                <li>
-                    <a href="">Sing-up</a>
-                </li>
-                <li>
-                    <a href="">Login</a>
-                </li>
-            </ul>
+            <div id="signupForm">
+                <h2 class="text-2xl font-bold mb-4">Cadastro</h2>
+                <form id="signup" class="space-y-4">
+                    <div>
+                        <label for="newUsername" class="block text-sm font-medium text-gray-700">Novo Username:</label>
+                        <input type="text" id="newUsername" required
+                            class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+                    <div>
+                        <label for="newPassword" class="block text-sm font-medium text-gray-700">Nova Senha:</label>
+                        <input type="password" id="newPassword" required
+                            class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+                    <button type="button" onclick="performSignup()"class="w-full bg-green-500 text-white p-2 rounded-md">Cadastrar</button>
+                </form>
+            </div>
         </div>
     </div>
-    <!--final do Header-->
+
+    <script src="./app/assets/JS/index.js"></script>
     
-    <div class="w-80 mx-auto my-28 px-2 h-16 items-center justify-center">
-        <h2 class="text-lg font-bold text-center mb-4">Registrar</h2>
-
-        <div class="bg-gray-500 shadow-md rounded-md px-6 py-6 space-y-4">
-            <div>
-                <label id="labelName" for="name" class="block text-sm font-semibold text-gray-800 mb-4">Nickname</label>
-
-                <input id="name" type="text" required placeholder="Digite seu Nickname" 
-                name="" id="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
-                text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
-            </div>
-            <div>
-                <label id="labelEmail" for="email" class="block text-sm font-semibold text-gray-800 mb-4">E-mail</label>
-
-                <input id="email" type="email" required placeholder="Digite seu email" 
-                name="" id="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
-                text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
-            </div>
-
-            <div>
-                <label id="labelSenha" for="senha" class="block text-sm font-semibold text-gray-800 mb-4">Senha</label>
-
-                <input id="senha" type="password" required placeholder="Digite sua senha" 
-                name="" id="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
-                text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out mb-4">
-            </div>
-
-            <div>
-                <label id="labelConfirmSenha" for="Confirmsenha" class="block text-sm font-semibold text-gray-800 mb-4">Confirmação de Senha</label>
-
-                <input id="Confirmsenha" type="password" required placeholder="Digite sua senha novamente" 
-                name="" id="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
-                text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out mb-4">
-            </div>
-
-            <div>
-                <button onclick="cadastrar()" class="w-full text-base bg-white hover:bg-blue-500 px-8 py-3 rounded text-black font-bold shadow">Registrar</button>
-            </div>
-
-            <div class="text-center">
-                <a href="./Logar.html" class="text-sm text-white hover:underline hover:text-red-500">Já tem conta? Acesse</a>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="./json.js"></script>
-    <script>
-        // Importa as funções do arquivo json.js
-        const { getUsuarios, adicionarUsuario } = require('./json');
-
-        // Função para coletar dados do formulário, criar um objeto de usuário e chamar a função adicionarUsuario
-  function cadastrar() {
-    const nome = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-    const confirmSenha = document.getElementById('Confirmsenha').value;
-
-    // Verifica se as senhas coincidem
-    if (senha !== confirmSenha) {
-      alert('As senhas não coincidem.');
-      return;
-    }
-
-    // Cria um objeto de usuário
-    const novoUsuario = {
-      nome: nome,
-      email: email,
-      senha: senha
-    };
-
-    // Adiciona o novo usuário à array
-    adicionarUsuario(novoUsuario);
-
-    // Limpa os campos do formulário
-    limparCampos();
-
-    // Exibe uma mensagem ou redireciona para outra página, se necessário
-    alert('Usuário cadastrado com sucesso!');
-  }
-
-  // Restante do seu script...
-</script>
-
 </body>
 </html>

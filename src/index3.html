@@ -3,50 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <title>Home Page</title>
+    <title>Itens CS</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body class="font-semibold text-white bg-gray-600">
-    <!--Header, topo da página-->
+    <!-- Header, topo da página -->
     <div class="bg-zinc-700">
         <div class="container mx-auto px-4 h-16 flex items-center">
-            <div class="font-black">
-                
-            </div>
-            <img  class="w-20 h-25" src="./app/assets/img/STremovebg.png" alt="">
-            <ul class="font-semibold flex items-center mr-auto space-x-2">
-                <li>
-                    <a href="">Home</a>
-                </li>
-                <li>
-                    <a href="">Cápsulas</a>
-                </li>
-                <li> 
-                    <a href="">Caixas</a>
-                </li> 
-            </ul>
-
-            <ul class="ml-auto font-semibold flex items-center space-x-2">
-                <li>
-                    <a href="">Sing-up</a>
-                </li>
-                <li>
-                    <a href="">Login</a>
-                </li>
-            </ul>
+            <!-- ... Código do cabeçalho ... -->
         </div>
     </div>
-    <!--final do Header-->
-    <div class="container">
-            
+    <!-- Final do Header -->
+
+    <!-- Conteúdo principal -->
+    <div class="container mx-auto my-8">
+        <!-- Capsules -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-2">Capsules</h2>
+            <div id="capsulesSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Aqui será adicionado dinamicamente -->
+            </div>
+        </div>
+
+        <!-- Cases -->
+        <div>
+            <h2 class="text-xl font-bold mb-2">Cases</h2>
+            <div id="casesSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Aqui será adicionado dinamicamente -->
+            </div>
+        </div>
     </div>
-    <!-- Cards -->
-    
-    <!-- /Cards-->
 
+    <script>
+        // Função assíncrona para buscar dados JSON
+        async function fetchData() {
+            try {
+                const response = await fetch('../db/db.json ');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+            }
+        }
 
+        // Função para criar um elemento de cartão para um item
+        function createCard(item) {
+            const card = document.createElement("div");
+            card.classList.add("bg-gray-500", "p-4", "rounded-md", "flex", "flex-col", "items-center", "justify-center");
 
+            const image = document.createElement("img");
+            image.src = item.imagem;
+            image.alt = item.nome;
+
+            const title = document.createElement("p");
+            title.classList.add("text-sm", "text-gray-800", "font-semibold", "text-center");
+            title.textContent = item.nome;
+
+            const price = document.createElement("p");
+            price.classList.add("text-sm", "text-white", "mt-2", "text-center");
+            price.textContent = item.price ? `Preço: ${item.price}` : "Preço indisponível";
+
+            // Adicione outras informações do item conforme necessário
+
+            card.appendChild(image);
+            card.appendChild(title);
+            card.appendChild(price);
+
+            return card;
+        }
+
+        // Função para adicionar cartões à seção correspondente
+        function addCards(items, containerId) {
+            const container = document.getElementById(containerId);
+            items.forEach(item => {
+                const card = createCard(item);
+                container.appendChild(card);
+            });
+        }
+
+        // Carregar dados e adicionar cartões quando a página carregar
+        window.onload = async function () {
+            const data = await fetchData();
+            if (data) {
+                addCards(data.itens_CS.capsules, "capsulesSection");
+                addCards(data.itens_CS.cases, "casesSection");
+            }
+        };
+    </script>
 </body>
 </html>
