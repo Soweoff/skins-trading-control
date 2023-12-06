@@ -11,35 +11,52 @@
 
 <body class="h-screen w-screen  items-center justify-center bg-gray-600">
      <!--Header, topo da página-->
-     <div class="bg-zinc-700">
-        <div class="container mx-auto px-4 h-16 flex items-center">
-            <div class="font-black">
+     <nav class="bg-zinc-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0">
+                        <img  class="mt-2 w-40 h-50" src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701694859/projeto%20SKT/header/b2agoeppzmv45bymoh08.png" alt="Logo SKT"> 
+                    </a>
+                    <div class="hidden md:block items-center">
+                        <div class="mr-10 flex items-baseline">
+                        <a href="#" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Home</a>
+                        <a href="#" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Cápsulas</a>
+                        <a href="#" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Caixas</a>
+                        <a href="#" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Sobre</a>
+                        </div>                        
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-96 flex items-baseline">
+                        <a href="#" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Logar</a>
+                        <a href="#" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Registrar</a>
+                        </div>                        
+                    </div>
+                </div>
                 
+                <div class="-mr-2 flex md:hidden">
+                    <button id="botaoMenu" type="button" class="inline-flex items-center justify-center p2 rounded-md text-gray-400 hover:text-white hover:bg-gray-600 focus:outline-none focus:bg-gray-600 focus:text-white transition duration-300 ease-in-out" aria-label="Menu" aria-expanded="false">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-lnecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <img  class="w-20 h-25" src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701694859/projeto%20SKT/header/b2agoeppzmv45bymoh08.png" alt=""> 
-            <ul class="font-semibold  flex items-center text-white space-x-2">
-                <li>
-                    <a href="">Home</a>
-                </li>
-                <li>
-                    <a href="">Cápsulas</a>
-                </li>
-                <li>
-                    <a href="">Caixas</a>
-                </li>
-            </ul>
-
-            <ul class="ml-auto font-semibold  flex items-center text-white space-x-2">
-                <li>
-                    <a href="">Sing-up</a>
-                </li>
-                <li>
-                    <a href="">Login</a>
-                </li>
-            </ul>
         </div>
-    </div>
-    <!--final do Header-->
+
+        <div id="menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pd-3 sm:px-3">
+                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Home</a>
+                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Cápsulas</a>
+                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Caixas</a>
+                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Sobre</a>
+                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Logar</a>
+                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Registrar</a>
+            </div>
+
+        </div>
+    </nav>
+   <!--final do Header-->
     
     <div class="w-80 mx-auto my-28 px-2 h-16 items-center justify-center">
         <h2 class="text-lg font-bold text-center mb-4">Registrar</h2>

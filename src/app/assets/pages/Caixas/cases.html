@@ -27,9 +27,8 @@
                         </div>                        
                     </div>
                     <div class="hidden md:block">
-                        <div class="ml-80 flex items-baseline">
-                        <a href="#" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Logar</a>
-                        <a href="#" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Registar</a>
+                        <div class="ml-96 flex items-baseline">
+                        <a href="#" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Sair</a>
                         </div>                        
                     </div>
                 </div>
@@ -50,24 +49,18 @@
                 <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Cápsulas</a>
                 <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Caixas</a>
                 <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Sobre</a>
-                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Logar</a>
-                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Registar</a>
+                <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Sair</a>
             </div>
 
         </div>
     </nav>
    <!--final do Header-->
 
-    <!-- Conteúdo principal -->
+    <!-- Exibição de Dados do JSON -->
     <div class="container mx-auto my-8">
-        <h1 class="text-2xl font-bold mb-4">Caixas CS</h1>
-
-        <!-- Cases -->
-        <div>
-            <h2 class="text-xl font-bold mb-2">Cases</h2>
-            <div id="casesSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <!-- Aqui será adicionado dinamicamente -->
-            </div>
+        <h2 class="text-3xl font-bold text-white mt-8 mb-4">Cases</h2>
+        <div id="cases-container" class="flex flex-wrap justify-center">
+            <!-- Os dados serão exibidos aqui -->
         </div>
     </div>
 

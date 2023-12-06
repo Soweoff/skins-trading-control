@@ -40,42 +40,28 @@
     </div>
     <!--final do Header-->
 
-    <!-- Cards -->
-    <div class="container" id="itens-container">
-        <div class="card">
-            <img src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701280905/projeto%20SKT/capsule/hejfx7po5bta8bbdstkk.png" alt="">
-            <h3>teste</h3>
+    <!-- Exibição de 2 Cards -->
+    <div class="container mx-auto my-8 flex justify-start">
+        <!-- Card 1 -->
+        <div class="max-w-xs mx-4">
+            <div class="bg-gray-500 rounded overflow-hidden shadow-lg">
+                <img src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701280724/projeto%20SKT/case/aybx3kusz9snghqotxat.png" alt="Operation Riptide Case" class="w-full">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-white text-xl mb-2">Caixas</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="max-w-xs mx-4">
+            <div class="bg-gray-500 rounded overflow-hidden shadow-lg">
+                <img src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701280906/projeto%20SKT/capsule/any2b1dqiaefzu8cgcdb.png" alt="Imagem do Card 2" class="w-full">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-white text-xl mb-2">Capsúlas</div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <!-- /Cards-->
 
-    <script>
-        function carregar() {
-            fetch('../db/db.json')
-                .then(response => response.json())
-                .then(itens_CS => {
-                    const container = document.querySelector("#itens-container")
-
-                    itens_CS.map(capsule => {
-                        const card = document.createElement("div")
-                        card.classList.add("card")
-
-                        const img = document.createElement("img");
-                        img.src = itens_CS.imagem
-                        img.alt = itens_CS.nome
-
-                        const price = document.createElement("h3")
-                        price.textContent = itens_CS.price
-
-                        card.appendChild(img)
-                        card.appendChild(price)
-                        container.appendChild(card)
-                    })
-                })
-        }
-
-        carregar()
-    </script>
 </body>
 </html>

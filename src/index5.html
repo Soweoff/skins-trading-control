@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Logar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="h-screen w-screen items-center justify-center bg-gray-600">
+    <!-- Header, topo da página -->
+    <nav class="bg-zinc-700">
+        <!-- ... (seu código existente) ... -->
+    </nav>
+    <!-- final do Header -->
+
+    <!-- Conteúdo da Página -->
+
+    <!-- Exibição de Dados do JSON -->
+    <div class="container mx-auto my-8">
+        <h2 class="text-3xl font-bold text-white mb-4">Capsules</h2>
+        <div id="capsules-container" class="flex flex-wrap justify-center">
+            <!-- Os dados serão exibidos aqui -->
+        </div>
+
+        <h2 class="text-3xl font-bold text-white mt-8 mb-4">Cases</h2>
+        <div id="cases-container" class="flex flex-wrap justify-center">
+            <!-- Os dados serão exibidos aqui -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Faz a solicitação HTTP para obter os dados das cápsulas
+            fetch('http://localhost:3000/capsules')
+                .then(response => response.json())
+                .then(data => {
+                    // Função para exibir os dados das cápsulas
+                    function displayCapsules() {
+                        const capsulesContainer = document.getElementById('capsules-container');
+                        data.forEach(capsule => {
+                            capsulesContainer.innerHTML += `
+                                <div class="max-w-xs sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 p-4">
+                                    <div class="bg-gray-500 rounded overflow-hidden shadow-lg">
+                                        <img src="${capsule.imagem}" alt="${capsule.nome}" class="w-full">
+                                        <div class="px-6 py-4">
+                                            <div class="font-bold text-white text-xl mb-2">${capsule.nome}</div>
+                                            <p class="text-white text-base font-semibold">Preço: R$${capsule.price}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }   
+
+                    // Chama a função para exibir os dados das cápsulas
+                    displayCapsules();
+                })
+                .catch(error => console.error('Erro ao obter os dados das cápsulas:', error));
+
+            // Faz a solicitação HTTP para obter os dados dos casos
+            fetch('http://localhost:3000/cases')
+                .then(response => response.json())
+                .then(data => {
+                    // Função para exibir os dados dos casos
+                    function displayCases() {
+                        const casesContainer = document.getElementById('cases-container');
+                        data.forEach(caseItem => {
+                            casesContainer.innerHTML += `
+                                <div class="max-w-xs sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 p-4">
+                                    <div class="bg-gray-500 rounded overflow-hidden shadow-lg">
+                                        <img src="${caseItem.imagem}" alt="${caseItem.nome}" class="w-full">
+                                        <div class="px-6 py-4">
+                                            <div class="font-bold text-white text-xl mb-2">${caseItem.nome}</div>
+                                            <p class="text-white text-base font-semibold">Preço: R$${caseItem.price}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+
+                    // Chama a função para exibir os dados dos casos
+                    displayCases();
+                })
+                .catch(error => console.error('Erro ao obter os dados dos casos:', error));
+        });
+    </script>
+
+    <script src="index.js"></script>
+    <script src="/src/app/assets/JS/Header.js"></script>
+
+</body>
+
+</html>
