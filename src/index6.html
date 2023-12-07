@@ -5,63 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <title>Home Page</title>
+    <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-Zg6SpeFEXRq3fPPsoHJzUGD+qZj1T2VbUweVV1zxC0wP2ACt3zRppMw8cNwhAymB" crossorigin="anonymous">
+
 </head>
-<body class="font-semibold text-white bg-gray-600">
-    <!--Header, topo da página-->
-    <div class="bg-zinc-700">
-        <div class="container mx-auto px-4 h-16 flex items-center">
-            <div class="font-black">
-                
-            </div>
-            <img  class="w-20 h-25" src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701694859/projeto%20SKT/header/b2agoeppzmv45bymoh08.png" alt=""> 
-            <ul class="font-semibold flex items-center mr-auto space-x-2">
-                <li>
-                    <a href="">Home</a>
-                </li>
-                <li>
-                    <a href="">Cápsulas</a>
-                </li>
-                <li> 
-                    <a href="">Caixas</a>
-                </li> 
-            </ul>
 
-            <ul class="ml-auto font-semibold flex items-center space-x-2">
-                <li>
-                    <a href="">Sing-up</a>
-                </li>
-                <li>
-                    <a href="">Login</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--final do Header-->
-
-    <!-- Exibição de 2 Cards -->
-    <div class="container mx-auto my-8 flex justify-start">
-        <!-- Card 1 -->
-        <div class="max-w-xs mx-4">
-            <div class="bg-gray-500 rounded overflow-hidden shadow-lg">
-                <img src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701280724/projeto%20SKT/case/aybx3kusz9snghqotxat.png" alt="Operation Riptide Case" class="w-full">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-white text-xl mb-2">Caixas</div>
+<body class="h-screen w-screen  items-center justify-center bg-gray-600">
+  <!--Header, topo da página-->
+  <nav class="bg-zinc-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <a href="#" class="flex-shrink-0">
+                    <img  class="mt-2 w-40 h-50" src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701694859/projeto%20SKT/header/b2agoeppzmv45bymoh08.png" alt="Logo SKT"> 
+                </a>
+                <div class="hidden md:block items-center">
+                    <div class="mr-10 flex items-baseline">
+                    <a href="#" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Home</a>
+                    <a href="#" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Sobre</a>
+                    </div>                        
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-96 flex items-baseline">
+                    <a href="http://127.0.0.1:5500/src/app/assets/pages/Login/Logar.html" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Logar</a>
+                    <a href="http://127.0.0.1:5500/src/app/assets/pages/Registrar/Registrar.html" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Registrar</a>
+                    </div>                        
                 </div>
             </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="max-w-xs mx-4">
-            <div class="bg-gray-500 rounded overflow-hidden shadow-lg">
-                <img src="https://res.cloudinary.com/dvqbwddan/image/upload/v1701280906/projeto%20SKT/capsule/any2b1dqiaefzu8cgcdb.png" alt="Imagem do Card 2" class="w-full">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-white text-xl mb-2">Capsúlas</div>
-                </div>
+            
+            <div class="-mr-2 flex md:hidden">
+                <button id="botaoMenu" type="button" class="inline-flex items-center justify-center p2 rounded-md text-gray-400 hover:text-white hover:bg-gray-600 focus:outline-none focus:bg-gray-600 focus:text-white transition duration-300 ease-in-out" aria-label="Menu" aria-expanded="false">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-lnecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
 
+    <div id="menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pd-3 sm:px-3">
+            <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Home</a>
+            <a href="#" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Sobre</a>
+            <a href="http://127.0.0.1:5500/src/app/assets/pages/Login/Logar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Logar</a>
+            <a href="http://127.0.0.1:5500/src/app/assets/pages/Registrar/Registrar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Registrar</a>
+        </div>
+
+    </div>
+</nav>
+<!--final do Header-->
+
+<div class="container mx-auto my-8">
+    <h2 class="text-3xl font-bold text-white mb-4">Capsules</h2>
+
+    <p></p>
+</div>
+
+   <!-- Conteúdo principal aqui -->
+ <div class="container mx-auto mt-8">
+    <h1 class="text-3xl text-white font-bold mb-4">Sobre Skins de Counter-Strike 2</h1>
+    <p class="text-white leading-relaxed">
+        As skins no Counter-Strike 2 (CS2) são personalizações visuais para armas e equipamentos utilizados no jogo.
+        Elas variam em termos de design, raridade e, consequentemente, valor no mercado virtual.
+    </p>
+    <p class="text-white leading-relaxed mt-4">
+        Cada skin é atribuída a uma arma específica e pode ser adquirida de várias maneiras, como comprando
+        caixas e chaves virtuais ou trocando com outros jogadores, tem skins que chegam a 1 milhão de reais.
+    </p>
+    <p class="text-white leading-relaxed mt-4">
+        O valor das skins é determinado pela sua raridade e demanda no mercado. Algumas skins extremamente raras
+        podem atingir preços elevados, tornando-as itens colecionáveis e desejados pelos jogadores.
+    </p>
+    <p class="text-white leading-relaxed mt-4">
+        A troca de skins entre jogadores é uma prática comum na comunidade de CS2. Plataformas online facilitam
+        essas transações, permitindo que os jogadores negociem e troquem skins de acordo com suas preferências.
+    </p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="p-10 bg-gray-800 text-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                <div class="mb-5">
+                    <h4 class="text-2xl pb-4 font-semibold">Company SKT</h4>
+                    <p class="text-gray-400">07/12/2023</p>
+                    <strong class="text-gray-400">Adicionado Capsúlas</strong>
+                    <p class="text-gray-400">07/12/2023</p>
+                    <strong class="text-gray-400">Adicionado Caixas</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full bg-gray-900 text-gray-400">
+        <div class="max-w-7xl flex flex-col sm:flex-row py-4 mx-auto justify-between items-center">
+            <div class="text-center">
+                <div>
+                    Copyright <strong><span>Company</span></strong>. All Rights Reserved
+                </div>
+                <div>
+                    Designed by <a href="#" class="text-yellow-500">TailwindCss</a>
+                </div>
+            </div>
+            <div class="text-center text-xl text-white mb-2">
+                <a href="#" class="w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 mx-1 inline-block pt-1"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 mx-1 inline-block pt-1"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 mx-1 inline-block pt-1"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 mx-1 inline-block pt-1"><i class="fa fa-skype"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 mx-1 inline-block pt-1"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/src/app/assets/JS/Header.js"></script>
 </body>
 </html>

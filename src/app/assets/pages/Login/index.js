@@ -1,6 +1,6 @@
 function redirectToDashboard() {
     // Redirecionar para a página desejada após o login
-    window.location.href = "/src/index6.html";
+    window.location.href = "/src/app/assets/pages/Home/Home.html";
 }
 
 
@@ -16,7 +16,7 @@ function submit() {
         const user = users.find(u => u.email === email && u.password === password);
 
         if (user) {
-            alert("Login bem-sucedido!");
+            //alert("Login bem-sucedido!");
             // Redirecionar ou executar outras ações após o login
             redirectToDashboard();
         } else {
