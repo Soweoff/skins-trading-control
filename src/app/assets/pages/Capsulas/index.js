@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div class="bg-gray-500 rounded overflow-hidden shadow-lg">
                                 <img src="${capsule.imagem}" alt="${capsule.nome}" class="w-full">
                                 <div class="px-6 py-4">
-                                    <div class="font-bold text-white text-xl mb-2">${capsule.nome}</div>
+                                    <div class="font-bold text-white text-xl mb-2 truncate">${capsule.nome}</div>
                                     <p class="text-white text-base font-semibold">Preço: R$${capsule.price}</p>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@ fetch('http://localhost:3000/cases')
                     <div class="bg-gray-500 rounded overflow-hidden shadow-lg">
                         <img src="${caseItem.imagem}" alt="${caseItem.nome}" class="w-full">
                         <div class="px-6 py-4">
-                            <div class="font-bold text-white text-xl mb-2">${caseItem.nome}</div>
+                            <div class="font-bold text-white text-xl mb-2 truncate">${caseItem.nome}</div>
                             <p class="text-white text-base font-semibold">Preço: R$${caseItem.price}</p>
                         </div>
                     </div>
