@@ -10,8 +10,8 @@
 </head>
 
 <body class="h-screen w-screen  items-center justify-center bg-gray-600">
-     <!--Header, topo da página-->
-     <nav class="bg-zinc-700">
+    <!--Header, topo da página-->
+    <nav class="bg-zinc-700">
         <div class="max-w-7xl mx-auto px-4 sm:px6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
@@ -20,14 +20,14 @@
                     </a>
                     <div class="hidden md:block items-center">
                         <div class="mr-10 flex items-baseline">
-                        <a href="http://127.0.0.1:5500/src/app/assets/pages/Home/HomeSemLogar.html" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Home</a>
-                        <a href="http://127.0.0.1:5500/src/app/assets/pages/Sobre/SobreSemLogar.html" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Sobre</a>
+                            <a href="http://127.0.0.1:5500/src/app/assets/pages/home/homeSemLogar.html" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Home</a>
+                            <a href="http://127.0.0.1:5500/src/app/assets/pages/sobre/sobreSemLogar.html" class="hover:bg-gray-600 text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Sobre</a>
                         </div>                        
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-96 flex items-baseline">
-                        <a href="http://127.0.0.1:5500/src/app/assets/pages/Login/Logar.html" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Logar</a>
-                        <a href="http://127.0.0.1:5500/src/app/assets/pages/Registrar/Registrar.html" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Registrar</a>
+                            <a href="http://127.0.0.1:5500/src/app/assets/pages/logar/logar.html" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Logar</a>
+                            <a href="http://127.0.0.1:5500/src/app/assets/pages/registrar/registrar.html" class="hover:bg-gray-600  text-white rounded px-2 py-2 ronded-md text sm font-medium transition duration-300 ease-in-out">Registrar</a>
                         </div>                        
                     </div>
                 </div>
@@ -44,77 +44,71 @@
 
         <div id="menu" class="hidden md:hidden">
             <div class="px-2 pt-2 pd-3 sm:px-3">
-                <a href="http://127.0.0.1:5500/src/app/assets/pages/Home/HomeSemLogar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Home</a>
-                <a href="http://127.0.0.1:5500/src/app/assets/pages/Sobre/SobreSemLogar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Sobre</a>
-                <a href="http://127.0.0.1:5500/src/app/assets/pages/Login/Logar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Logar</a>
-                <a href="http://127.0.0.1:5500/src/app/assets/pages/Registrar/Registrar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Registrar</a>
+                <a href="http://127.0.0.1:5500/src/app/assets/pages/home/homeSemLogar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Home</a>
+                <a href="http://127.0.0.1:5500/src/app/assets/pages/sobre/sobreSemLogar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Sobre</a>
+                <a href="http://127.0.0.1:5500/src/app/assets/pages/logar/logar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Logar</a>
+                <a href="http://127.0.0.1:5500/src/app/assets/pages/registrar/registrar.html" class="hover:bg-gray-600 text-white block px-3 py-2 rounded-md text-base text-center font-medium transition duration-300 ease-in-out">Registrar</a>
             </div>
-
         </div>
     </nav>
-   <!--final do Header-->
+    <!--final do Header-->
     
     <div class="w-80 mx-auto my-28 px-2 h-16 items-center justify-center">
         <h2 class="text-lg font-bold text-center mb-4">Registrar</h2>
 
         <div class="bg-gray-500 shadow-md rounded-md px-6 py-6 space-y-4">
-            <div>
-                <label id="labelName" for="name" class="block text-sm font-semibold text-gray-800 mb-4">Nickname</label>
+            <form onsubmit="return submitForm()">
+                <div>
+                    <label id="labelName" for="name" class="block text-sm font-semibold text-gray-800 mb-4">Nickname</label>
 
-                <input id="name" type="name" required placeholder="Digite seu Nickname" 
-                name="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
-                text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
+                    <input id="name" type="name" required placeholder="Digite seu Nickname" 
+                        name="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
+                        text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
 
-                <div id = "nameError" class="mt-2 text-xs text-red-700 italic font-semibold hidden">Nome inválido</div>
-                
-            </div>
-            <div>
-                <label id="labelEmail" for="email" class="block text-sm font-semibold text-gray-800 mb-4">E-mail</label>
+                    <div id="nameError" class="mt-2 text-xs text-red-700 italic font-semibold hidden">Nome inválido</div>
+                </div>
+                <div>
+                    <label id="labelEmail" for="email" class="block text-sm font-semibold text-gray-800 mb-4 mt-4">E-mail</label>
 
-                <input id="email" type="email" required placeholder="Digite seu email" 
-                name="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
-                text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
+                    <input id="email" type="email" required placeholder="Digite seu email" 
+                        name="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
+                        text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
 
-                <div id = "emailError" class="mt-2 text-xs text-red-700 italic font-semibold hidden">E-mail inválido</div>
+                    <div id="emailError" class="mt-2 text-xs text-red-700 italic font-semibold hidden">E-mail inválido</div>
+                </div>
 
-            </div>
+                <div>
+                    <label id="labelSenha" for="senha" class="block text-sm font-semibold text-gray-800 mb-4 mt-4">Senha</label>
 
-            <div>
-                <label id="labelSenha" for="senha" class="block text-sm font-semibold text-gray-800 mb-4">Senha</label>
+                    <input id="password" type="password" required placeholder="Digite sua senha" 
+                        name="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
+                        text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
 
-                <input id="password" type="password" required placeholder="Digite sua senha" 
-                name="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
-                text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
+                    <div id="passwordError" class="mt-4 text-xs text-red-700 italic font-semibold hidden">Senha inválida</div>
+                </div>
 
-                <div id = "passwordError" class="mt-2 text-xs text-red-700 italic font-semibold hidden">Senha inválida</div>
-                
-            </div>
+                <div>
+                    <label id="labelConfirmSenha" for="Confirmsenha" class="block text-sm font-semibold text-gray-800 mb-4 mt-4">Confirmação de Senha</label>
 
-            <div>
-                <label id="labelConfirmSenha" for="Confirmsenha" class="block text-sm font-semibold text-gray-800 mb-4">Confirmação de Senha</label>
+                    <input id="passwordConfirm" type="password" required placeholder="Digite sua senha novamente" 
+                        name="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
+                        text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
 
-                <input id="passwordConfirm" type="password" required placeholder="Digite sua senha novamente" 
-                name="" class="w-full bg-gray-50 border rounded border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 px-3 py-2 
-                text-base text-black-700 placeholder-gray-400 focus:outline-none transtion duration-200 ease-in-out">
+                    <div id="confirmError" class="mt-4 text-xs text-red-700 italic font-semibold hidden">Confirmação de Senha inválido</div>
+                </div>
 
-                <div id = "confirmError" class="mt-2 text-xs text-red-700 italic font-semibold hidden">Confirmação de Senha inválido</div>
-
-            </div>
-
-
-         
-            <div>
-                <button onclick="submit()" class="w-full mt-2 text-base bg-white hover:bg-blue-500 px-8 py-3 rounded text-black font-bold shadow">Registrar</button>
-            </div>
+                <div>
+                    <button type="submit" class="w-full mt-6 text-base bg-white hover:bg-blue-500 px-8 py-3 rounded text-black font-bold shadow">Registrar</button>
+                </div>
+            </form>
 
             <div class="text-center">
-                <a href="http://127.0.0.1:5500/src/app/assets/pages/Login/Logar.html" class="text-sm text-white hover:underline hover:text-red-500">Já tem conta? Acesse</a>
+                <a href="http://127.0.0.1:5500/src/app/assets/pages/logar/logar.html" class="text-sm text-white hover:underline hover:text-red-500">Já tem conta? Acesse</a>
             </div>
-
         </div>
     </div>
 
     <script src="index.js"></script>
-    <script src="/src/app/assets/JS/Header.js"></script>
+    <script src="/src/app/assets/js/header.js"></script>
 </body>
 </html>

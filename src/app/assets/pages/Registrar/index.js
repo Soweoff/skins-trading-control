@@ -1,92 +1,79 @@
-function redirectToDashboard() {
-    // Redirecionar para a página desejada após o login
-    window.location.href = "/src/app/assets/pages/Login/Logar.html";
-}
-function submit() {
-    if (validateForm()) {
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+function submitForm() {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const passwordConfirmInput = document.getElementById("passwordConfirm");
 
-        // Recuperar usuários armazenados no localStorage
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-
-        // Verificar se o usuário já existe
-        const userExists = users.some(u => u.email === email);
-
-        if (userExists) {
-            alert("Este e-mail já está registrado. Escolha outro e-mail.");
-        } else {
-            // Adicionar novo usuário
-            users.push({ name, email, password });
-            localStorage.setItem("users", JSON.stringify(users));
-            alert("Cadastro realizado com sucesso!");
-            redirectToDashboard();
-        }
-    }
-}
-
-function validateForm() {
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
-    const passwordConfirm = document.getElementById("passwordConfirm");
     const nameError = document.getElementById("nameError");
     const emailError = document.getElementById("emailError");
     const passwordError = document.getElementById("passwordError");
-    const passwordConfError = document.getElementById("confirmError");
+    const confirmError = document.getElementById("confirmError");
 
-    if (!name.value || !email.value || !password.value || !passwordConfirm.value) {
-        if (!name.value) {
-            name.classList.remove("border-gray-300");
-            name.classList.add("border-red-500");
+    // Reset custom validity
+    nameInput.setCustomValidity("");
+    emailInput.setCustomValidity("");
+    passwordInput.setCustomValidity("");
+    passwordConfirmInput.setCustomValidity("");
+
+    // Add your own validation rules here
+
+    if (!nameInput.value || !emailInput.value || !passwordInput.value || !passwordConfirmInput.value) {
+        if (!nameInput.value) {
+            nameInput.setCustomValidity("Campo obrigatório");
+            nameError.textContent = "Nome inválido";
             nameError.classList.remove("hidden");
         }
 
-        if (!email.value) {
-            email.classList.remove("border-gray-300");
-            email.classList.add("border-red-500");
+        if (!emailInput.value) {
+            emailInput.setCustomValidity("Campo obrigatório");
+            emailError.textContent = "E-mail inválido";
             emailError.classList.remove("hidden");
         }
 
-        if (!password.value) {
-            password.classList.remove("border-gray-300");
-            password.classList.add("border-red-500");
+        if (!passwordInput.value) {
+            passwordInput.setCustomValidity("Campo obrigatório");
+            passwordError.textContent = "Senha inválida";
             passwordError.classList.remove("hidden");
         }
 
-        if (!passwordConfirm.value) {
-            passwordConfirm.classList.remove("border-gray-300");
-            passwordConfirm.classList.add("border-red-500");
-            passwordConfError.classList.remove("hidden");
+        if (!passwordConfirmInput.value) {
+            passwordConfirmInput.setCustomValidity("Campo obrigatório");
+            confirmError.textContent = "Confirmação de Senha inválida";
+            confirmError.classList.remove("hidden");
         }
 
         return false;
     }
 
-    if (name.value) {
-        name.classList.add("border-gray-300");
-        name.classList.remove("border-red-500");
-        nameError.classList.add("hidden");
+    // Your existing validation logic goes here
+
+    if (nameInput.checkValidity() && emailInput.checkValidity() && passwordInput.checkValidity() && passwordConfirmInput.checkValidity()) {
+        // Continue with your registration logic here
+        // ...
+
+        // Recuperar usuários armazenados no localStorage
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Verificar se o usuário já existe
+        const userExists = users.some(u => u.email === emailInput.value);
+
+        if (userExists) {
+            alert("Este e-mail já está registrado. Escolha outro e-mail.");
+        } else {
+            // Adicionar novo usuário
+            users.push({ name: nameInput.value, email: emailInput.value, password: passwordInput.value });
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Cadastro realizado com sucesso!");
+            // Redirect to the dashboard or perform other actions after registration
+            redirectToDashboard();
+        }
     }
 
-    if (email.value) {
-        email.classList.add("border-gray-300");
-        email.classList.remove("border-red-500");
-        emailError.classList.add("hidden");
-    }
+    // Return false to prevent form submission if there are errors
+    return false;
+}
 
-    if (password.value) {
-        password.classList.add("border-gray-300");
-        password.classList.remove("border-red-500");
-        passwordError.classList.add("hidden");
-    }
-
-    if (passwordConfirm.value) {
-        passwordConfirm.classList.add("border-gray-300");
-        passwordConfirm.classList.remove("border-red-500");
-        passwordConfError.classList.add("hidden");
-    }
-
-    return name.value && email.value && password.value && passwordConfirm.value;
+function redirectToDashboard() {
+    // Redirect to the page after registration
+    window.location.href = "/src/app/assets/pages/logar/logar.html";
 }

@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     `;
                 });
-            }   
+            }
 
             // Chama a função para exibir os dados das cápsulas
             displayCapsules();
         })
         .catch(error => console.error('Erro ao obter os dados das cápsulas:', error));
-    });
+});
