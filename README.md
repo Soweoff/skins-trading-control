@@ -7,7 +7,7 @@ O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript e o backen
 
 ## Endereço de Deploy - GitHub Pages
 
-https://github.com/Soweoff/skins-trading-control
+https://soweoff.github.io/skins-trading-control/
 
 ## Protótipo
 
